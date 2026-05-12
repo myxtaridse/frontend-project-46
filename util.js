@@ -14,8 +14,7 @@ export const genDiff = (obj1, obj2) => {
       acc.push(`  ${key}: ${obj1[key]}`)
     }
     else {
-      acc.push(`- ${key}: ${obj1[key]}`)
-      acc.push(`+ ${key}: ${obj2[key]}`)
+      acc.push(`- ${key}: ${obj1[key]}`, `+ ${key}: ${obj2[key]}`)
     }
     return acc
   }, []).join('\n  ')
