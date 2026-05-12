@@ -1,7 +1,7 @@
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/myxtaridse/frontend-project-46/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/myxtaridse/frontend-project-46/actions)
 [![test-check](https://github.com/myxtaridse/frontend-project-46/actions/workflows/test-check.yml/badge.svg)](https://github.com/myxtaridse/frontend-project-46/actions/workflows/test-check.yml)
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=myxtaridse_frontend-project-46&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=myxtaridse_frontend-project-46)
+[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=myxtaridse_frontend-project-46&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=myxtaridse_frontend-project-46)
 
 # Gendiff
 
