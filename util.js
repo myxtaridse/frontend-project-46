@@ -1,7 +1,7 @@
 export const genDiff = (obj1, obj2) => {
   const union = { ...obj1, ...obj2 }
 
-  const keys = Object.keys(union).sort()
+  const keys = Object.keys(union).sort((a, b) => a > b ? 1 : -1)
 
   const result = keys.reduce((acc, key) => {
     if (!Object.hasOwn(obj2, key)) {
