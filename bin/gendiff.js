@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 import { program } from 'commander'
-import { readFile } from './files.js'
+import { readFile } from '../files.js'
+import { genDiff } from '../util.js'
 
 program
   .name('gendiff')
@@ -10,9 +11,10 @@ program
   .argument('<filepath1>')
   .argument('<filepath2>')
   .action((file1, file2) => {
-    const readFile1 = readFile(file1)
-    const readFile2 = readFile(file2)
-    console.log(readFile1, file2)
+    const obj1 = JSON.parse(readFile(file1))
+    const obj2 = JSON.parse(readFile(file2))
+
+    console.log(genDiff(obj1, obj2))
   })
 
 program.parse()
