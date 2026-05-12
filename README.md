@@ -1,5 +1,6 @@
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/myxtaridse/frontend-project-46/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/myxtaridse/frontend-project-46/actions)
+[![test-check](https://github.com/myxtaridse/frontend-project-46/actions/workflows/test-check.yml/badge.svg)](https://github.com/myxtaridse/frontend-project-46/actions/workflows/test-check.yml)
 
 # Gendiff
 
