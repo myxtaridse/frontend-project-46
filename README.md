@@ -14,7 +14,7 @@ make setup
 
 ## Usage (to compare two file):
 ```bash
-gendiff <fileName1> <fileNam2>
+gendiff <filepath1> <filepath2>
 ```
 
 [![asciicast](https://asciinema.org/a/i6dwSN2CNsg31t68.svg)](https://asciinema.org/a/i6dwSN2CNsg31t68)
