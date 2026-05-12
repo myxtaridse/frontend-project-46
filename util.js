@@ -10,12 +10,12 @@ export const genDiff = (obj1, obj2) => {
     else if (!Object.hasOwn(obj1, key)) {
       acc.push(`+ ${key}: ${obj2[key]}`)
     }
-    else if (obj1[key] !== obj2[key]) {
-      acc.push(`- ${key}: ${obj1[key]}`)
-      acc.push(`+ ${key}: ${obj2[key]}`)
+    else if (obj1[key] === obj2[key]) {
+      acc.push(`  ${key}: ${obj1[key]}`)
     }
     else {
-      acc.push(`  ${key}: ${obj1[key]}`)
+      acc.push(`- ${key}: ${obj1[key]}`)
+      acc.push(`+ ${key}: ${obj2[key]}`)
     }
     return acc
   }, []).join('\n  ')
