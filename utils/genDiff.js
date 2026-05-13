@@ -1,4 +1,4 @@
-export const genDiff = (obj1, obj2) => {
+const genDiff = (obj1, obj2) => {
   const union = { ...obj1, ...obj2 }
 
   const keys = Object.keys(union).sort((a, b) => a > b ? 1 : -1)
@@ -21,3 +21,5 @@ export const genDiff = (obj1, obj2) => {
 
   return `{\n  ${result}\n}`
 }
+
+export default genDiff
