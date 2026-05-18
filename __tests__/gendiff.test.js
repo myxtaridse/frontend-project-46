@@ -79,6 +79,16 @@ test('should be correct to compare two files with the json extension in the json
   expect(result.trim()).toEqual(expected)
 })
 
+// сравнение двух файлов с расширением json и yaml в форматерре json
+test('should be correct to compare two files with the yml extension in the json formatter', () => {
+  const expected = readFile('json/results/resultJson.txt').trim()
+  const result = execSync(
+    'node bin/gendiff.js -f json json/files/file1.json yaml/files/file2.yaml',
+    { encoding: 'utf8' },
+  )
+  expect(result.trim()).toEqual(expected)
+})
+
 test('incorrect way to calculate the difference by adding the wrong type of formatter', () => {
   // const expected = readFile('json/results/result.txt').trim()
   expect(() => execSync(
