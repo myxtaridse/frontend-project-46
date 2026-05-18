@@ -2,7 +2,7 @@ import readFile from '../utils/readFile.js'
 import path from 'node:path'
 import jsonParse from './parsers/jsonParse.js'
 import yamlParse from './parsers/yamlParse.js'
-import genDiff from './genDiff.js'
+import stylish from './genDiff.js'
 import builderTree from './trees/builderTree.js'
 
 const mapping = {
@@ -11,7 +11,11 @@ const mapping = {
   yml: yamlParse,
 }
 
-const parser = (filepath1, filepath2) => {
+const fomatters = {
+  stylish,
+}
+
+const parser = (filepath1, filepath2, formatName = '') => {
   const formatFile1 = path.extname(filepath1).slice(1)
   const formatFile2 = path.extname(filepath2).slice(1)
 
@@ -27,6 +31,7 @@ const parser = (filepath1, filepath2) => {
 
   const tree = builderTree(parserFile1, parserFile2)
 
-  return genDiff(tree)
+  const format = fomatters[formatName]
+  return format(tree)
 }
 export default parser

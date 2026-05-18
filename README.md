@@ -20,3 +20,11 @@ gendiff <filepath1> <filepath2>
 ```
 
 [![asciicast](https://asciinema.org/a/i6dwSN2CNsg31t68.svg)](https://asciinema.org/a/i6dwSN2CNsg31t68)
+
+
+## Usage (to compare two file with nesting):
+```bash
+gendiff -f stylish <filepath1> <filepath2>
+```
+
+[![asciicast](https://asciinema.org/a/TdSN3hJTzfH74oBK.svg)](https://asciinema.org/a/TdSN3hJTzfH74oBK)
