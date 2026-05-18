@@ -5,6 +5,6 @@ import json from './json.js'
 const fomatters = {
   stylish,
   plain,
-  json,
+  json: tree => JSON.stringify(json(tree)),
 }
 export default fomatters
