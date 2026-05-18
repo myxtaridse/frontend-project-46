@@ -16,7 +16,7 @@ const builderTree = (obj1, obj2) => {
     else if (JSON.stringify(obj1[key]) === JSON.stringify(obj2[key])) {
       node = treeDiff(key, status.unchanged, obj1[key])
     }
-    else if (union[key] instanceof Object) {
+    else if (obj1[key] instanceof Object && union[key] instanceof Object) {
       node = treeDiff(key, status.nested)
       node.children = builderTree(obj1[key], obj2[key])
     }
