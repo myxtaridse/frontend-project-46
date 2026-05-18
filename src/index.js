@@ -7,6 +7,7 @@ import genDiff from '../utils/genDiff.js'
 const mapping = {
   json: jsonParse,
   yaml: yamlParse,
+  yml: yamlParse,
 }
 
 const parser = (filepath1, filepath2) => {
