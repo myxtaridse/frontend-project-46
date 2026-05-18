@@ -12,6 +12,9 @@ const mapping = {
 }
 
 const parser = (filepath1, filepath2, formatName) => {
+  if (!filepath1 || !filepath2) {
+    throw new Error(`Missing required argument 'filepath1' and 'filepath2'`)
+  }
   const formatFile1 = path.extname(filepath1).slice(1)
   const formatFile2 = path.extname(filepath2).slice(1)
 
