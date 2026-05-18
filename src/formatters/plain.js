@@ -1,4 +1,4 @@
-import status from '../../utils/status.js'
+import status from '../config/status.js'
 
 const valueHasObject = (value) => {
   if (value instanceof Object) {

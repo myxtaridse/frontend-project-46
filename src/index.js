@@ -1,4 +1,4 @@
-import readFile from '../utils/readFile.js'
+import readFile from './utils/readFile.js'
 import path from 'node:path'
 import jsonParse from './parsers/jsonParse.js'
 import yamlParse from './parsers/yamlParse.js'

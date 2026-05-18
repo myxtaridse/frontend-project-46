@@ -1,6 +1,6 @@
 // строим дерево различий
 import TreeDiff from './tree.js'
-import status from '../../utils/status.js'
+import status from '../config/status.js'
 
 const builderTree = (obj1, obj2) => {
   const union = { ...obj1, ...obj2 }

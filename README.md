@@ -36,3 +36,11 @@ gendiff -f plain <filepath1> <filepath2>
 ```
 
 [![asciicast](https://asciinema.org/a/XHhFWdZWicTZBtZr.svg)](https://asciinema.org/a/XHhFWdZWicTZBtZr)
+
+
+## Usage (to compare two file in the json formatter):
+```bash
+gendiff -f json <filepath1> <filepath2>
+```
+
+[![asciicast](https://asciinema.org/a/3xqXEJu3JM3Ni7XO.svg)](https://asciinema.org/a/3xqXEJu3JM3Ni7XO)
