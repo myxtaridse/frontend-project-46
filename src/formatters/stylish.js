@@ -1,4 +1,4 @@
-import status from '../utils/status.js'
+import status from '../../utils/status.js'
 
 // функция для формирования строк из деревьев
 const getSpace = depth => '    '.repeat(depth)

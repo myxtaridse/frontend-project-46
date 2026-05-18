@@ -2,8 +2,8 @@ import readFile from '../utils/readFile.js'
 import path from 'node:path'
 import jsonParse from './parsers/jsonParse.js'
 import yamlParse from './parsers/yamlParse.js'
-import stylish from './genDiff.js'
 import builderTree from './trees/builderTree.js'
+import fomatters from './formatters/index.js'
 
 const mapping = {
   json: jsonParse,
@@ -11,11 +11,7 @@ const mapping = {
   yml: yamlParse,
 }
 
-const fomatters = {
-  stylish,
-}
-
-const parser = (filepath1, filepath2, formatName = '') => {
+const parser = (filepath1, filepath2, formatName) => {
   const formatFile1 = path.extname(filepath1).slice(1)
   const formatFile2 = path.extname(filepath2).slice(1)
 

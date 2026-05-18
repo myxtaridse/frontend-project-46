@@ -28,3 +28,11 @@ gendiff -f stylish <filepath1> <filepath2>
 ```
 
 [![asciicast](https://asciinema.org/a/TdSN3hJTzfH74oBK.svg)](https://asciinema.org/a/TdSN3hJTzfH74oBK)
+
+
+## Usage (to compare two file in the plain formatter):
+```bash
+gendiff -f plain <filepath1> <filepath2>
+```
+
+[![asciicast](https://asciinema.org/a/XHhFWdZWicTZBtZr.svg)](https://asciinema.org/a/XHhFWdZWicTZBtZr)
