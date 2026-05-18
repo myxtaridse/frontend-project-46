@@ -1,6 +1,6 @@
 // строим дерево различий
-import TreeDiff from './tree.js'
 import status from '../config/status.js'
+import treeDiff from './tree.js'
 
 const builderTree = (obj1, obj2) => {
   const union = { ...obj1, ...obj2 }
@@ -8,22 +8,20 @@ const builderTree = (obj1, obj2) => {
   for (const key in union) {
     let node
     if (!Object.hasOwn(obj2, key)) {
-      node = new TreeDiff(key, status.deleted, obj1[key])
+      node = treeDiff(key, status.deleted, obj1[key])
     }
     else if (!Object.hasOwn(obj1, key)) {
-      node = new TreeDiff(key, status.added, obj2[key])
+      node = treeDiff(key, status.added, obj2[key])
     }
     else if (JSON.stringify(obj1[key]) === JSON.stringify(obj2[key])) {
-      node = new TreeDiff(key, status.unchanged, obj1[key])
+      node = treeDiff(key, status.unchanged, obj1[key])
+    }
+    else if (union[key] instanceof Object) {
+      node = treeDiff(key, status.nested)
+      node.children = builderTree(obj1[key], obj2[key])
     }
     else {
-      if (union[key] instanceof Object) {
-        node = new TreeDiff(key, status.nested)
-        node.children = builderTree(obj1[key], obj2[key])
-      }
-      else {
-        node = new TreeDiff(key, status.changed, obj2[key], obj1[key])
-      }
+      node = treeDiff(key, status.changed, obj2[key], obj1[key])
     }
     res.push(node)
   }
