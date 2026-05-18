@@ -78,3 +78,11 @@ test('should be correct to compare two files with the json extension in the json
   )
   expect(result.trim()).toEqual(expected)
 })
+
+test('incorrect way to calculate the difference by adding the wrong type of formatter', () => {
+  // const expected = readFile('json/results/result.txt').trim()
+  expect(() => execSync(
+    'node bin/gendiff.js -f stylih yml/files/file1.yml yml/files/file2.yml',
+    { encoding: 'utf8' },
+  )).toThrow()
+})

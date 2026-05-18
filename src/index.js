@@ -28,6 +28,9 @@ const parser = (filepath1, filepath2, formatName) => {
   const tree = builderTree(parserFile1, parserFile2)
 
   const format = fomatters[formatName]
+  if (!format) {
+    throw new Error(`There is no '${formatName}' format for calculating the difference.`)
+  }
   return format(tree)
 }
 export default parser
