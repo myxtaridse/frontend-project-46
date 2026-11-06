@@ -11,7 +11,7 @@ const mapping = {
   yml: yamlParse,
 }
 
-const parser = (filepath1, filepath2, formatName = 'stylish') => {
+const genDiff = (filepath1, filepath2, formatName = 'stylish') => {
   if (!filepath1 || !filepath2) {
     throw new Error(`Missing required argument 'filepath1' and 'filepath2'`)
   }
@@ -36,4 +36,4 @@ const parser = (filepath1, filepath2, formatName = 'stylish') => {
   }
   return format(tree)
 }
-export default parser
+export default genDiff

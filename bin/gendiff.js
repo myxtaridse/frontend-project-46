@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import { program } from 'commander'
-import parser from '../src/index.js'
+import genDiff from '../src/index.js'
 
 program
   .name('gendiff')
@@ -10,7 +10,7 @@ program
   .argument('<filepath1>')
   .argument('<filepath2>')
   .action((file1, file2, options) => {
-    const compare = parser(file1, file2, options.format)
+    const compare = genDiff(file1, file2, options.format)
     console.log(compare)
   })
 
