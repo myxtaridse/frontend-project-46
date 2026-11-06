@@ -11,7 +11,7 @@ const valueHasObject = (value) => {
 const text = {
   added: value => `was added with value: ${valueHasObject(value)}`,
   deleted: () => `was removed`,
-  changed: (oldValue, value) => `was updated. From ${valueHasObject(oldValue)} to ${valueHasObject(value)}`,
+  changed: (value, oldValue) => `was updated. From ${valueHasObject(oldValue)} to ${valueHasObject(value)}`,
 }
 
 const genDiff = (tree) => {
@@ -25,9 +25,7 @@ const genDiff = (tree) => {
         res.push(iter(child.children, parent + `${child.key}.`))
         continue
       }
-      const substring = child.type === status.changed
-        ? text[child.type](child.oldValue, child.value)
-        : text[child.type](child.value)
+      const substring = text[child.type](child.value, child.oldValue)
       res.push(`Property '${parent}${child.key}' ${substring}`)
     }
     return res.join('\n')
