@@ -1,5 +1,5 @@
 import status from '../config/status.js'
-import isObject from '../utils/isObject.js'
+import { isObject } from '../utils/isObject.js'
 
 const valueHasObject = (value) => {
   if (isObject(value)) {
