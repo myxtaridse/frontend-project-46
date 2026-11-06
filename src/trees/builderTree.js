@@ -1,5 +1,6 @@
 // строим дерево различий
 import status from '../config/status.js'
+import { isObject } from '../utils/isObject.js'
 import treeDiff from './tree.js'
 
 const builderTree = (obj1, obj2) => {
@@ -7,6 +8,7 @@ const builderTree = (obj1, obj2) => {
   const res = []
   for (const key of Object.keys(union)) {
     let node
+
     if (!Object.hasOwn(obj2, key)) {
       node = treeDiff(key, status.deleted, obj1[key])
     }
