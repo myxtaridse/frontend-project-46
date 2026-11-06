@@ -1,7 +1,8 @@
 import status from '../config/status.js'
+import isObject from '../utils/isObject.js'
 
 const valueHasObject = (value) => {
-  if (value instanceof Object) {
+  if (isObject(value)) {
     return `[complex value]`
   }
   return typeof value === 'string' ? `'${value}'` : value

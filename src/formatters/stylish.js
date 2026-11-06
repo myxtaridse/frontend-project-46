@@ -1,6 +1,6 @@
 import status from '../config/status.js'
+import { isObject } from '../utils/isObject.js'
 
-// функция для формирования строк из деревьев
 const getSpace = depth => '    '.repeat(depth)
 const getSpaceStatus = {
   added: depth => getSpace(depth).slice(2) + '+ ',
@@ -9,7 +9,7 @@ const getSpaceStatus = {
   nested: depth => getSpace(depth),
 }
 const getValue = (child, depth) => {
-  if (!(child instanceof Object)) {
+  if (!isObject(child)) {
     return child
   }
   const list = Object.entries(child)
