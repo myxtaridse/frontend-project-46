@@ -28,12 +28,11 @@ const genDiff = (filepath1, filepath2, formatName = 'stylish') => {
   const parserFile1 = mapping[formatFile1](contentFile1)
   const parserFile2 = mapping[formatFile2](contentFile2)
 
-  const tree = builderTree(parserFile1, parserFile2)
-
   const format = fomatters[formatName]
   if (!format) {
     throw new Error(`There is no '${formatName}' format for calculating the difference.`)
   }
+  const tree = builderTree(parserFile1, parserFile2)
   return format(tree)
 }
 export default genDiff
