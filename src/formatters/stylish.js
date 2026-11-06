@@ -18,7 +18,7 @@ const getValue = (child, depth) => {
 
   return `{\n${list}\n${getSpace(depth - 1)}}`
 }
-const genDiff = (tree) => {
+const getDiffToStylish = (tree) => {
   const iter = (node, depth = 1) => {
     const res = []
     for (const child of node) {
@@ -40,4 +40,4 @@ const genDiff = (tree) => {
   return iter(tree)
 }
 
-export default genDiff
+export default getDiffToStylish

@@ -14,7 +14,7 @@ const text = {
   changed: (value, oldValue) => `was updated. From ${valueHasObject(oldValue)} to ${valueHasObject(value)}`,
 }
 
-const genDiff = (tree) => {
+const getDiffToJSON = (tree) => {
   const iter = (node, parent = '') => {
     const res = []
     for (const child of node) {
@@ -40,4 +40,4 @@ const genDiff = (tree) => {
   return iter(tree)
 }
 
-export default genDiff
+export default getDiffToJSON
