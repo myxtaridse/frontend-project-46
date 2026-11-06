@@ -66,3 +66,9 @@ gendiff -f json <filepath1> <filepath2>
 ```
 
 [![asciicast](assets/3xqXEJu3JM3Ni7XO.svg)](https://asciinema.org/a/3xqXEJu3JM3Ni7XO)
+
+
+## Run tests
+```Bash
+make test
+```
